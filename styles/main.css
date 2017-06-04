@@ -1,0 +1,476 @@
+@import "compass/css3";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	font-family: "Roboto", sans-serif;
+	font-size: 1.2em;
+	color: #363237;
+	line-height: 160%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+/*---------------------------------*/
+/*-------Text-based content |1.2|-*/
+a {
+}
+
+a:link {
+}
+
+a:visited {
+}
+
+a:hover {
+}
+
+span {
+} 
+
+h1 {
+}
+
+/*---------------------------------*/
+/*-------------------Footer |1.4|-*/
+#footer {
+	background-color: #363237;
+	font-size: 12px;
+	color: #fff;
+    width: 100%;
+    height: auto;
+    padding-top: 20px;
+	padding-bottom: 16px;
+}
+
+#footer h2 {
+	text-align: center;
+}
+
+#footer p {
+	text-align: center;
+}
+
+#social {
+	text-align: center;
+	margin: 0 auto;
+}
+
+#social td {
+	width: 15%;
+}
+
+#social hr { 
+    border-top: 1px solid #fff;
+}
+
+#social img {
+	width: 3.5vw;
+	height: auto;
+	padding: 5px;
+}
+
+/*__________accessibility |2.11|_*/
+#header_small {
+	background-color: #fff;
+	position: static;
+	padding: 29px 0 7px 0;
+	text-align: center;
+	font-weight: 700;
+}
+
+#navbar_small {
+	font-size: 18px;
+	line-height: 100%;
+}
+
+#navbar_small a:link {
+	color: #363237;
+}
+
+#navbar_small a:visited {
+	color: #363237;
+}
+
+#navbar_small a:hover {
+	color: #4c82c8;
+}
+
+#navbar_small ul {
+	list-style-type: none;
+	margin-bottom: 0;
+}
+
+#navbar_small ul li {
+	display: inline-block;
+	margin: 15px 10px 0 10px;
+}
+
+
+/*_____________exceptions |2.12|_*/
+.dropdown, .drop_content {
+	display: none;
+}
+
+/*---------------------------------*/
+/*------------------Content |2.2|-*/
+#front_page {
+	margin: 0;
+	background-image: url(../images/header.jpeg);
+    border: 25px solid transparent;
+    border-image: url(clouds.jpg) 25 stretch;
+    filter:grayscale() ;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+#heading {
+	float: right;
+	position: relative;
+	width: 42%;
+	height: auto;
+	padding-top: 210px;
+	border-radius: 10px 0 0 10px;
+	z-index: 1;
+}
+
+#heading h1 {
+	text-align: left;
+	font-size: 2.4vw;
+	color: #fff;
+}
+
+#heading p {
+	text-align: left;
+	font-size: 1.8vw;
+	color: #fff;
+}
+
+/* MAIN */
+.content {
+	margin-left: 65px;
+	margin-right: 65px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#main1 {
+	background-color: #fff;
+	width: 100%;
+	height: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: justify;
+}
+
+#main_img {
+	max-width: 100%;
+	height: auto;
+}
+
+#main_img img {
+	width: 100%;
+	height: auto;
+}
+
+#emptymain1 {
+	width: 100%;
+	height: 100vh;
+}
+
+#main2 {
+	background-color: #4c82c8;
+	color: #fff;
+	width: 100%;
+	height: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: justify;
+}
+
+#container {
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 8%;
+}
+
+#app1, #app2, #app3 {
+	display: inline-block;
+	width: 18%;
+	height: auto;
+	vertical-align: top;
+}
+
+#app2 {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+#app1 img, #app2 img, #app3 img {
+	width: 16vw;
+}
+
+.app_txt {
+	text-align: center;
+	font-size: 1.8vw;
+	margin: 10% 0 10% 1%;
+}
+
+#main3 {
+	background-color: #fff;
+	width: 100%;
+	height: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: justify;
+}
+
+#download {
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 8%;
+}
+
+#button1, #button2, #button3 {
+	display: inline-block;
+	width: 15%;
+	height: auto;
+	vertical-align: top;
+}
+
+#button2 {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+#button1 img, #button2 img, #button3 img {
+	width: 14vw;
+}
+
+.download_txt {
+	text-align: center;
+	font-size: 1.7vw;
+	margin: 10% 0 10% 4%;
+}
+
+#main3 a {
+	color: blue;
+	text-decoration: underline;
+}
+
+#main3 a:hover {
+	color: #363237;
+}
+
+#main3 a:visited {
+	color: blue;
+}
+
+
+@media only screen and (max-width : 850px) {
+/*====================================*/
+/*=====-| 3 |-Tablet specific-=======*/
+/*==================================*/
+/*---------------------------------*/
+/*------------Html and body |3.1|-*/
+	body {font-size: 1.0em;}
+    
+/*------------------Nav-bar |3.2|-*/
+/*____wrapper and content |3.20|_*/
+	#navbar{
+		display: none;
+	}
+
+	.dropbtn {
+    	margin: 10px;
+    	margin-right: 15px;
+    	background-color: #363237;
+    	border: solid white 2px;
+    	cursor: pointer;
+	}
+
+	.dropdown {
+    	float: right;
+    	position: relative;
+    	display: inline;
+    	max-width: 100vw;
+	}
+
+	.drop_content {
+    	display: none;
+   		position: absolute; 
+    	right: 0;
+    	left: auto;
+    	font-size: 18px;
+   		text-align: center;
+   		background-color: #363237;
+    	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    	width: 100vw;
+    	margin-top: -1px;
+    }
+
+	.drop_content a {
+    	color: #fff;
+    	padding: 10px 0 10px 0;
+       	text-decoration: none;
+   		display: block;
+	}
+
+	.drop_content a:hover {
+		background-color: #f1f1f1;
+		color: #000;
+	}
+
+	.dropdown:hover .drop_content {
+    	display: block;
+	}
+
+  
+	#container {
+		margin-top: 20%;
+	}
+
+	#main1, #main2, #main3 {
+		text-align: left;
+	}
+
+	#app1, #app2, #app3 {
+		display: inline;
+		margin: 10% 0 0 0;
+	}
+
+	#app1 img, #app2 img, #app3 img {
+		width: 40%;
+	}
+
+	.app_txt {
+		font-size: 1.2em;
+		margin: 2% 0 10% 0;
+	}
+
+	#download {
+		margin-top: 20%;
+	}
+
+	#button1, #button2, #button3 {
+		display: inline;
+		margin: 10% 0 0 0;
+	}
+
+	#button1 img, #button2 img, #button3 img {
+		width: 40%;
+	}
+
+	.download_txt {
+		font-size: 1.1em;
+		margin: 2% 0 10% 0;
+	}
+    
+    #social img {
+		width: 7.0vw;
+	}
+
+/*_____________exceptions |3.21|_*/
+    #heading {
+		display: none;
+	}
+    
+	#header_small {
+        display: none;
+    }
+
+}
+
+
+@media only screen and (max-width : 420px) {
+/*====================================*/
+/*=====-| 4 |-Mobile specific-=======*/
+/*==================================*/
+/*---------------------------------*/
+/*------------Html and body |4.1|-*/
+	body {font-size: 0.9em}
+    
+/*------------------Nav-bar |4.2|-*/
+/*____wrapper and content |4.20|_*/
+	h1 {font-size: 1.3em;}
+
+	.content {
+		margin-left: 40px;
+		margin-right: 40px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.app_txt {
+		font-size: 1.1em;
+	}
+    
+    #main1, #main2, #main3 {
+        text-align: left;
+    }
+
+	#social img {
+		width: 10.0vw;
+	}
+
+	#footer p {
+		font-size: 0.7em;
+	}
+
+/*_____________exceptions |3.21|_*/
+    #logo_txt {
+		display: none;
+	}
+}
+
+
+/*====================================*/
+/*=====-| 5 |-Other-=================*/
+/*==================================*/
+/*---------------------------------*/
+/*-------------Scroll arrow |5.1|-*/
+.scroll {
+	margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 6em;
+    animation: moveArrow 2s infinite;
+    -webkit-animation: moveArrow 2s infinite;
+}
+
+@-webkit-keyframes moveArrow { 
+	0% { -webkit-transform: translateY(0px); } 
+	50% { -webkit-transform: translateY(-7px); } 
+	100% { -webkit-transform: translateY(0px); } 
+}
+
+/*-----------Tab-navigation |5.2|-*/
+.tab-nav{
+   pointer-events: none;
+   cursor: default;
+   opacity: 0;
+}
+
+.tab-navImg{
+	cursor: default;
+}
