@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    
+<canvas id="gameCanvas" width="1000" height="600"></canvas>
+    
+    <script>        
+        var canvas;
+        var canvasContext;
+        var canvasWidth = document.getElementById('gameCanvas').width;
+        var canvasHeight = document.getElementById('gameCanvas').height;
+        var ballPosX = 50;
+        var ballPosY = 50;
+        var ballSize = canvasWidth/100;
+        var ballDirX = 10;
+        var ballDirY = 10;
+        var seperatorHeight = document.getElementById('gameCanvas').height/10;
+        const paddleWidth = canvasWidth/60;
+        const paddleHeight = canvasHeight/4.5;
+        var paddle1PosY = 0; 
+        var paddle2PosY = 0;
+        var scoreP1 = 0;
+        var scoreP2 = 0;
+        var running = true;
+        var fps = 30;
+        
+        
+        
+        window.onload = function() {
+            canvas = document.getElementById('gameCanvas');
+            canvasContext = canvas.getContext('2d');
+            
+            if(running){
+                setInterval(function() {
+                    moveBall();
+                    drawEverything(); 
+                }, 1000/fps);
+            }
+            
+            canvas.addEventListener('mousemove',
+                                   function(evt) {
+                                        var mousePos = calculateMousePos(evt);
+                                        paddle1PosY = mousePos.y - paddleHeight/2;
+            });
+            canvas.addEventListener('click',
+                                   function(evt) {
+                                        running = !running;
+            });
+        }
+        
+        function movePaddle2() {
+            var paddle2Center = paddle2PosY + (paddleHeight/2);
+            
+            if(paddle2Center < ballPosY - (paddleHeight/5)){
+                paddle2PosY += 10;
+            }else if(paddle2Center > ballPosY + (paddleHeight/3)) {
+                paddle2PosY -= 10;
+            }
+        }
+        
+        function ballReset() {
+            ballPosX = canvas.width/2;
+            ballPosY = canvas.height/2;
+            var ballDirY = 10;
+            var ballDirY = 10;
+        }
+        
+        function calculateMousePos(evt) {
+            var rect = canvas.getBoundingClientRect();
+            var root = document.documentElement;
+            var mouseX = evt.clientX - rect.left - root.scrollLeft;
+            var mouseY = evt.clientY - rect.top - root.scrollTop;
+            return {
+                x:mouseX,
+                y:mouseY
+            }; 
+        }
+        
+        function drawEverything() {
+            movePaddle2();
+            canvasContext.fillStyle = 'black';
+            canvasContext.fillRect(0,0,canvas.width,canvas.height);
+            
+            canvasContext.fillStyle = 'white';
+            for (i = 0; i < seperatorHeight; i++){
+                canvasContext.fillRect(canvas.width/2, i*seperatorHeight+seperatorHeight/4, 1, seperatorHeight/2);
+            }
+            canvasContext.fillRect(0, paddle1PosY, paddleWidth, paddleHeight);
+            canvasContext.fillRect(canvas.width-paddleWidth, paddle2PosY, paddleWidth, paddleHeight);
+            
+            canvasContext.beginPath();
+            canvasContext.arc(ballPosX, ballPosY, ballSize, 0, Math.PI*2, true);
+            canvasContext.fill();
+            
+            canvasContext.fillText(scoreP1, canvasWidth/10, canvasHeight/10);
+            canvasContext.fillText(scoreP2, canvasWidth-(canvasWidth/10), canvasHeight/10);
+            //canvasContext.fillRect(ballPosX, ballPosY, ballSize, ballSize);
+            
+            var message = "Ballen er til venstre. BallPosX: " + ballPosX;
+                    canvasContext.fillText(message, 200, 200);
+            
+            canvasContext.fillStyle = 'yellow';
+            canvasContext.fillRect(ballPosX, ballPosY, 10, 10);
+        }
+        
+        function moveBall() {
+            if(running){
+                //Ballen er til under canvas
+                if((ballPosY+(ballSize*2))>=canvas.height){
+                    ballDirY = -ballDirY;
+                }
+                //Ballen er over canvas
+                if(ballPosY-(ballSize*2)<=0){
+                    ballDirY = -ballDirY;
+                }
+                
+                //Ballen er til venstre for canvas
+                if(ballPosX < ballSize + paddleWidth) {
+                    //Ballen er truffet av paddle
+                    if(ballPosY > paddle1PosY && ballPosY < paddle1PosY+paddleHeight) {
+                        ballDirX = -ballDirY;
+                    //Ballen er ikke truffet av paddle
+                    } else {
+                        ballReset();
+                        scoreP2++;
+                    }
+                }
+                
+                //Ballen er til høyre for canvas
+                if(ballPosX + ballSize + paddleWidth > canvasWidth) {
+                    var message = "Ballen er til venstre. BallPosX: " + ballPosX;
+                    canvasContext.fillText(message, canvas.width-200, 200);
+                    
+                    //Ballen er truffet av paddle
+                    if(ballPosY > paddle2PosY && ballPosY < paddle2PosY+paddleHeight) {
+                        ballDirX = -ballDirX;
+                    //Ballen er ikke truffet av paddle
+                    } else {
+                        ballReset();
+                        scoreP1++;
+                    }
+                }                
+
+                ballPosX = ballPosX + ballDirX;
+                ballPosY = ballPosY + ballDirY;
+            }
+        }
+    </script>
+</html>
