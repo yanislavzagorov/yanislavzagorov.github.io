@@ -429,7 +429,7 @@ i {
 }
 
 
-@media handheld, screen and (max-width : 850px) {
+@media screen and (max-width : 850px) {
 /*====================================*/
 /*=====-| 3 |-Tablet specific-=======*/
 /*==================================*/
@@ -566,7 +566,7 @@ i {
 }
 
 
-@media handheld, screen and (max-width : 420px) {
+@media screen and (max-width : 420px) {
 /*====================================*/
 /*=====-| 4 |-Mobile specific-=======*/
 /*==================================*/
