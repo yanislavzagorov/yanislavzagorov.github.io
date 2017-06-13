@@ -428,12 +428,8 @@ i {
 	color: blue;
 }
 
-/*
-@media screen and (max-width : 850px) {
-*/
 
-@media only screen and (device-width: 850px),
-only screen and (max-width:850px) {
+@media only screen and (max-width: 850px) {
 /*====================================*/
 /*=====-| 3 |-Tablet specific-=======*/
 /*==================================*/
@@ -570,12 +566,8 @@ only screen and (max-width:850px) {
 }
 
 
-/*
-@media screen and (max-width : 420px) {
-*/
-    
-@media only screen and (device-width: 420px),
-only screen and (max-width: 420px) {
+
+@media screen and (max-width: 420px) {
 /*====================================*/
 /*=====-| 4 |-Mobile specific-=======*/
 /*==================================*/
