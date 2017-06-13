@@ -566,7 +566,7 @@ i {
 }
 
 
-@media only screen and (max-width : 420px) {
+@media handheld, screen and (max-width : 420px) {
 /*====================================*/
 /*=====-| 4 |-Mobile specific-=======*/
 /*==================================*/
