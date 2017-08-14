@@ -94,6 +94,7 @@ i {
     right: 2vw;
     top: 15vh;
     text-align: center;
+    display:none;
 }
 
 .my_picture img {
@@ -569,6 +570,7 @@ i {
         left: 0;
         top: 15vh;
         text-align: center;
+        display: block;
     }
 
 /*_____________exceptions |3.21|_*/
