@@ -394,24 +394,44 @@ i {
 	margin-top: 8%;
 }
 
+#download_L h1 {
+	margin: 0px;
+}
+
+#download_button_L {
+	margin:0;
+}
+
 #download_S {
     display: none;
 }
 
 #button1, #button2, #button3 {
-	display: inline-block;
-	width: 30%;
+	width: 30vw;
 	height: auto;
 	vertical-align: top;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #button2 {
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-right:5vw;
 }
 
-#button1 img, #button2 img, #button3 img {
-	width: 40vw;
+#button2 img, #button3 img {
+	width: 20vw;
+}
+
+#button1 {
+	width:80vw;
+}
+
+#button1 img {
+	width: 70vw;
+}
+
+#button2, #button3 {
+	display:inline-block;
 }
 
 .download_txt {
