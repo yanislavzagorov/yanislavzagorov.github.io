@@ -94,7 +94,7 @@ i {
     right: 2vw;
     top: 15vh;
     text-align: center;
-    display:none;
+    /* display:none; */
 }
 
 .my_picture img {
