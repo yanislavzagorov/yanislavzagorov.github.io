@@ -24,7 +24,7 @@
 /*----|3.21|----------------------exceptions*/
 
 /*__________________________________________*/
-/*--| 4 |-Tablet-specific rules-------------*/
+/*--| 4 |-Mobile-specific rules-------------*/
 /*---|4.1|---------------------Html and body*/
 /*---|4.2|---------------------------Nav-bar*/
 /*----|4.20|-------------wrapper and content*/
@@ -391,7 +391,7 @@ i {
 	text-align: center;
 	width: 100%;
 	height: auto;
-	margin-top: 8%;
+	margin-top: 2%;
 }
 
 #download_L h1 {
